@@ -1,0 +1,10 @@
+/gps/particle gamma 
+/gps/number 1 
+/gps/pos/type Plane 
+/gps/pos/shape Square 
+/gps/pos/centre 50 70 -10 mm 
+/gps/pos/halfx 50 mm
+/gps/pos/halfy 50 mm 
+/gps/direction 0.0 0.0 1.0 
+/gps/energy 0.015 MeV 
+/run/beamOn 1

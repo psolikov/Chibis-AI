@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="../../schema/gdml.xsd">
+    <define>
+
+        <!-- -->
+        <constant value="4" name="number_y"/>
+        <constant value="6" name="number_z"/>
+        
+        
+        <quantity value="60" name="cellThickness" unit="mm"/>
+        <quantity value="17" name="cellRadius" unit="mm"/>
+        <quantity value="4" name="between" unit="mm"/>
+        
+        
+        <quantity value="450" name="worldX" unit="mm"/>
+        <quantity value="450" name="worldY" unit="mm"/>
+        <quantity value="450" name="worldZ" unit="mm"/>
+        <!-- -->
+        
+        
+        <variable value="1" name="x"/>
+        <variable value="1" name="y"/>
+        <variable value="1" name="z"/>
+        <position name="centerPos"/>
+    </define>
+    
+    
+      
+      <materials>
+         <material Z="1.0" name="AlMg4">
+            <fraction n="0.95" ref="Al"/>
+            <fraction n="0.04" ref="Mg"/>
+            <fraction n="0.005" ref="Mn"/>
+            <fraction n="0.004" ref="Si"/>
+            <fraction n="0.001" ref="Zn"/>
+         </material>
+         
+         
+         <material formula="BGO" name="BGO" >
+          <D value="7.10" />
+          <fraction n="0.6315" ref="G4_O" />
+          <fraction n="0.1578" ref="G4_Ge" />
+          <fraction n="0.2150" ref="G4_Bi" />
+         </material>
+      </materials>
+    
+    
+    
+    
+    <solids>
+        <box name="world"  x="worldX" y="worldY"  z="worldZ" />
+        <box name="cell" x="cellRadius" y="cellRadius" z="cellThickness" />
+        
+        <box name="wrapp_teflon" x="cellRadius+2" y="cellRadius+2" z="cellThickness" />
+
+        
+        <box name="wrapp_AlMg" x="(cellRadius+0.5)*8" y="(cellRadius+0.5)*8" z="cellThickness-1" />
+
+    </solids>
+    
+    
+    
+    <structure>
+        
+        <volume name="Cell">
+        <materialref ref="BGO"/>
+        <solidref ref="cell"/>
+        <auxiliary auxtype="SensDet" auxvalue="SensitiveScoredDetector"/>
+        </volume>
+
+        
+        <volume name="Wrapp_AlMg">
+        <materialref ref="AlMg4"/>
+        <solidref ref="wrapp_AlMg"/>
+        </volume>
+        
+        
+        <volume name="Wrapp_teflon">
+        <materialref ref="G4_TEFLON"/>
+        <solidref ref="wrapp_teflon"/>
+        </volume>
+        
+        
+        
+        <volume name="World">
+            
+          
+            <physvol>
+                <volumeref ref="Wrapp_AlMg"/>
+                <position name="cellPos0" x="cellRadius*3" y="cellRadius*4 +  between*1.5" z="cellThickness"/>
+            </physvol>
+            
+          
+           
+            <materialref ref="G4_Galactic"/>
+            <solidref ref="world"/>
+            
+            
+            
+            
+            
+            <!-- cudes -->
+            <loop for="y" from="1" to="number_y" step="1">
+                <loop for="z" from="1" to="number_z" step="1">
+                    <physvol>
+                        <volumeref ref="Cell"/>
+                        <position name="cellPos1" x="cellRadius*y + between*y" y="cellRadius*z + between*z" z="cellThickness"/>
+                    </physvol>
+                </loop>
+            </loop>
+            
+            
+            <loop for="y" from="1" to="number_y" step="1">
+                <physvol>
+                    <volumeref ref="Cell"/>
+                    <position name="cellPos2" x="cellRadius*(z-1) + between*(z-1) " y="(y+1)*(cellRadius + between)" z="cellThickness"/>
+                </physvol>
+            </loop>
+            
+            <loop for="y" from="1" to="number_y" step="1">
+                <physvol>
+                    <volumeref ref="Cell"/>
+                    <position name="cellPos3" x="0 " y="(y+1)*(cellRadius + between)" z="cellThickness"/>
+                </physvol>
+            </loop>
+            
+            
+            <!--wrap -->
+            
+            
+            
+            <loop for="y" from="1" to="number_y" step="1">
+                <loop for="z" from="1" to="number_z" step="1">
+                    <physvol>
+                        <volumeref ref="Wrapp_teflon"/>
+                        <position name="cellPos1" x="cellRadius*y + between*y" y="cellRadius*z + between*z" z="cellThickness"/>
+                    </physvol>
+                </loop>
+            </loop>
+            
+            
+            <loop for="y" from="1" to="number_y" step="1">
+                <physvol>
+                    <volumeref ref="Wrapp_teflon"/>
+                    <position name="cellPos2" x="cellRadius*(z-1) + between*(z-1) " y="(y+1)*(cellRadius + between)" z="cellThickness"/>
+                </physvol>
+            </loop>
+            
+            <loop for="y" from="1" to="number_y" step="1">
+                <physvol>
+                    <volumeref ref="Wrapp_teflon"/>
+                    <position name="cellPos3" x="0 " y="(y+1)*(cellRadius + between)" z="cellThickness"/>
+                </physvol>
+            </loop>
+
+        </volume>
+        
+    </structure>
+    
+    <setup name="test" version="1.0">
+        <world ref="World"/>
+    </setup>
+    
+</gdml>

@@ -1,0 +1,9 @@
+/gps/direction 0 0 1
+/gps/particle gamma
+/gps/number 1
+/gps/pos/type Point
+/gps/pos/centre 50 70 -10 mm
+/gps/pos/halfx 50 mm
+/gps/pos/halfy 50 mm
+/gps/energy {Ekin} MeV
+/run/beamOn 1

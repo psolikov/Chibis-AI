@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="../../schema/gdml.xsd">
+    <define>
+
+        <!-- -->
+        <constant value="4" name="number_y"/>
+        <constant value="6" name="number_z"/>
+        
+        
+        <quantity value="60" name="cellThickness" unit="mm"/>
+        <quantity value="17" name="cellRadius" unit="mm"/>
+        <quantity value="4" name="between" unit="mm"/>
+        
+        
+        <quantity value="450" name="worldX" unit="mm"/>
+        <quantity value="450" name="worldY" unit="mm"/>
+        <quantity value="450" name="worldZ" unit="mm"/>
+        <!-- -->
+        
+        
+        <variable value="1" name="x"/>
+        <variable value="1" name="y"/>
+        <variable value="1" name="z"/>
+        <position name="centerPos"/>
+    </define>
+    
+    
+      
+      <materials>
+         <material Z="1.0" name="AlMg4">
+            <fraction n="0.95" ref="Al"/>
+            <fraction n="0.04" ref="Mg"/>
+            <fraction n="0.005" ref="Mn"/>
+            <fraction n="0.004" ref="Si"/>
+            <fraction n="0.001" ref="Zn"/>
+         </material>
+         
+         
+         <material formula="BGO" name="BGO" >
+          <D value="7.10" />
+          <fraction n="0.6315" ref="G4_O" />
+          <fraction n="0.1578" ref="G4_Ge" />
+          <fraction n="0.2150" ref="G4_Bi" />
+         </material>
+      </materials>
+    
+    
+    
+    
+    <solids>
+        <box name="world"  x="worldX" y="worldY"  z="worldZ" />
+        <box name="cell" x="cellRadius" y="cellRadius" z="cellThickness" />
+        
+        <box name="wrapp_teflon" x="cellRadius+2" y="cellRadius+2" z="cellThickness" />
+
+        
+        <box name="wrapp_AlMg" x="(cellRadius+0.5)*8" y="(cellRadius+0.5)*8" z="cellThickness-1" />
+
+    </solids>
+    
+    
+    
+    <structure>
+        
+        <volume name="Cell_1">
+        <materialref ref="BGO"/>
+        <solidref ref="cell"/>
+        <auxiliary auxtype="SensDet" auxvalue="SensitiveScoredDetector"/>
+        </volume>
+        
+        <volume name="Cell_2">
+        <materialref ref="BGO"/>
+        <solidref ref="cell"/>
+        <auxiliary auxtype="SensDet" auxvalue="SensitiveScoredDetector"/>
+        </volume>
+        
+        <volume name="Cell_3">
+        <materialref ref="BGO"/>
+        <solidref ref="cell"/>
+        <auxiliary auxtype="SensDet" auxvalue="SensitiveScoredDetector"/>
+        </volume>
+        
+        <volume name="Cell_4">
+        <materialref ref="BGO"/>
+        <solidref ref="cell"/>
+        <auxiliary auxtype="SensDet" auxvalue="SensitiveScoredDetector"/>
+        </volume>
+        
+        <volume name="Cell_5">
+        <materialref ref="BGO"/>
+        <solidref ref="cell"/>
+        <auxiliary auxtype="SensDet" auxvalue="SensitiveScoredDetector"/>
+        </volume>
+        
+        <volume name="Cell_6">
+        <materialref ref="BGO"/>
+        <solidref ref="cell"/>
+        <auxiliary auxtype="SensDet" auxvalue="SensitiveScoredDetector"/>
+        </volume>
+        
+        <volume name="Cell_7">
+        <materialref ref="BGO"/>
+        <solidref ref="cell"/>
+        <auxiliary auxtype="SensDet" auxvalue="SensitiveScoredDetector"/>
+        </volume>
+        
+        <volume name="Cell_8">
+        <materialref ref="BGO"/>
+        <solidref ref="cell"/>
+        <auxiliary auxtype="SensDet" auxvalue="SensitiveScoredDetector"/>
+        </volume>
+        
+        <volume name="Cell_9">
+        <materialref ref="BGO"/>
+        <solidref ref="cell"/>
+        <auxiliary auxtype="SensDet" auxvalue="SensitiveScoredDetector"/>
+        </volume>
+        
+        
+        <volume name="Cell_10">
+        <materialref ref="BGO"/>
+        <solidref ref="cell"/>
+        <auxiliary auxtype="SensDet" auxvalue="SensitiveScoredDetector"/>
+        </volume>
+        
+        <volume name="Cell_11">
+        <materialref ref="BGO"/>
+        <solidref ref="cell"/>
+        <auxiliary auxtype="SensDet" auxvalue="SensitiveScoredDetector"/>
+        </volume>
+        
+        <volume name="Cell_12">
+        <materialref ref="BGO"/>
+        <solidref ref="cell"/>
+        <auxiliary auxtype="SensDet" auxvalue="SensitiveScoredDetector"/>
+        </volume>
+        
+        <volume name="Cell_13">
+        <materialref ref="BGO"/>
+        <solidref ref="cell"/>
+        <auxiliary auxtype="SensDet" auxvalue="SensitiveScoredDetector"/>
+        </volume>
+        
+        <volume name="Cell_14">
+        <materialref ref="BGO"/>
+        <solidref ref="cell"/>
+        <auxiliary auxtype="SensDet" auxvalue="SensitiveScoredDetector"/>
+        </volume>
+        
+        <volume name="Cell_15">
+        <materialref ref="BGO"/>
+        <solidref ref="cell"/>
+        <auxiliary auxtype="SensDet" auxvalue="SensitiveScoredDetector"/>
+        </volume>
+        
+        <volume name="Cell_16">
+        <materialref ref="BGO"/>
+        <solidref ref="cell"/>
+        <auxiliary auxtype="SensDet" auxvalue="SensitiveScoredDetector"/>
+        </volume>
+        
+        <volume name="Cell_17">
+        <materialref ref="BGO"/>
+        <solidref ref="cell"/>
+        <auxiliary auxtype="SensDet" auxvalue="SensitiveScoredDetector"/>
+        </volume>
+        
+        <volume name="Cell_18">
+        <materialref ref="BGO"/>
+        <solidref ref="cell"/>
+        <auxiliary auxtype="SensDet" auxvalue="SensitiveScoredDetector"/>
+        </volume>
+        
+        <volume name="Cell_19">
+        <materialref ref="BGO"/>
+        <solidref ref="cell"/>
+        <auxiliary auxtype="SensDet" auxvalue="SensitiveScoredDetector"/>
+        </volume>
+        
+        <volume name="Cell_20">
+        <materialref ref="BGO"/>
+        <solidref ref="cell"/>
+        <auxiliary auxtype="SensDet" auxvalue="SensitiveScoredDetector"/>
+        </volume>
+        
+        
+        <volume name="Cell_21">
+        <materialref ref="BGO"/>
+        <solidref ref="cell"/>
+        <auxiliary auxtype="SensDet" auxvalue="SensitiveScoredDetector"/>
+        </volume>
+        
+        <volume name="Cell_22">
+        <materialref ref="BGO"/>
+        <solidref ref="cell"/>
+        <auxiliary auxtype="SensDet" auxvalue="SensitiveScoredDetector"/>
+        </volume>
+        
+        <volume name="Cell_23">
+        <materialref ref="BGO"/>
+        <solidref ref="cell"/>
+        <auxiliary auxtype="SensDet" auxvalue="SensitiveScoredDetector"/>
+        </volume>
+        
+        <volume name="Cell_24">
+        <materialref ref="BGO"/>
+        <solidref ref="cell"/>
+        <auxiliary auxtype="SensDet" auxvalue="SensitiveScoredDetector"/>
+        </volume>
+        
+        <volume name="Cell_25">
+        <materialref ref="BGO"/>
+        <solidref ref="cell"/>
+        <auxiliary auxtype="SensDet" auxvalue="SensitiveScoredDetector"/>
+        </volume>
+        
+        
+        <volume name="Cell_26">
+        <materialref ref="BGO"/>
+        <solidref ref="cell"/>
+        <auxiliary auxtype="SensDet" auxvalue="SensitiveScoredDetector"/>
+        </volume>
+        
+        <volume name="Cell_27">
+        <materialref ref="BGO"/>
+        <solidref ref="cell"/>
+        <auxiliary auxtype="SensDet" auxvalue="SensitiveScoredDetector"/>
+        </volume>
+        
+        <volume name="Cell_28">
+        <materialref ref="BGO"/>
+        <solidref ref="cell"/>
+        <auxiliary auxtype="SensDet" auxvalue="SensitiveScoredDetector"/>
+        </volume>
+        
+        <volume name="Cell_29">
+        <materialref ref="BGO"/>
+        <solidref ref="cell"/>
+        <auxiliary auxtype="SensDet" auxvalue="SensitiveScoredDetector"/>
+        </volume>
+        
+        <volume name="Cell_30">
+        <materialref ref="BGO"/>
+        <solidref ref="cell"/>
+        <auxiliary auxtype="SensDet" auxvalue="SensitiveScoredDetector"/>
+        </volume>
+        
+        <volume name="Cell_31">
+        <materialref ref="BGO"/>
+        <solidref ref="cell"/>
+        <auxiliary auxtype="SensDet" auxvalue="SensitiveScoredDetector"/>
+        </volume>
+        
+        <volume name="Cell_32">
+        <materialref ref="BGO"/>
+        <solidref ref="cell"/>
+        <auxiliary auxtype="SensDet" auxvalue="SensitiveScoredDetector"/>
+        </volume>
+        
+        
+        
+        
+        
+
+        
+        <volume name="Wrapp_AlMg">
+        <materialref ref="AlMg4"/>
+        <solidref ref="wrapp_AlMg"/>
+        </volume>
+        
+        
+        <volume name="Wrapp_teflon">
+        <materialref ref="G4_TEFLON"/>
+        <solidref ref="wrapp_teflon"/>
+        </volume>
+        
+        
+        
+        <volume name="World">
+            
+          
+            <physvol>
+                <volumeref ref="Wrapp_AlMg"/>
+                <position name="cellPos0" x="cellRadius*3" y="cellRadius*4 +  between*1.5" z="cellThickness"/>
+            </physvol>
+            
+          
+           
+            <materialref ref="G4_Galactic"/>
+            <solidref ref="world"/>
+            
+            
+            
+            
+            
+            <!-- cudes -->
+    
+            
+            <physvol>
+                <volumeref ref="Cell_1"/>
+                <position name="cellPos1" x="cellRadius*1 + between*1" y="cellRadius*1 + between*1" z="cellThickness"/>
+            </physvol>
+            
+            <physvol>
+                <volumeref ref="Cell_2"/>
+                <position name="cellPos1" x="cellRadius*1 + between*1" y="cellRadius*2 + between*2" z="cellThickness"/>
+            </physvol>
+            
+            <physvol>
+                <volumeref ref="Cell_3"/>
+                <position name="cellPos1" x="cellRadius*1 + between*1" y="cellRadius*3 + between*3" z="cellThickness"/>
+            </physvol>
+            
+            <physvol>
+                <volumeref ref="Cell_4"/>
+                <position name="cellPos1" x="cellRadius*1 + between*1" y="cellRadius*4 + between*4" z="cellThickness"/>
+            </physvol>
+            
+            <physvol>
+                <volumeref ref="Cell_5"/>
+                <position name="cellPos1" x="cellRadius*1 + between*1" y="cellRadius*5 + between*5" z="cellThickness"/>
+            </physvol>
+            
+            <physvol>
+                <volumeref ref="Cell_6"/>
+                <position name="cellPos1" x="cellRadius*1 + between*1" y="cellRadius*6 + between*6" z="cellThickness"/>
+            </physvol>
+            
+            
+            
+            
+            
+            
+            <physvol>
+                <volumeref ref="Cell_7"/>
+                <position name="cellPos1" x="cellRadius*2 + between*2" y="cellRadius*1 + between*1" z="cellThickness"/>
+            </physvol>
+            
+            <physvol>
+                <volumeref ref="Cell_8"/>
+                <position name="cellPos1" x="cellRadius*2 + between*2" y="cellRadius*2 + between*2" z="cellThickness"/>
+            </physvol>
+            
+            <physvol>
+                <volumeref ref="Cell_9"/>
+                <position name="cellPos1" x="cellRadius*2 + between*2" y="cellRadius*3 + between*3" z="cellThickness"/>
+            </physvol>
+            
+            <physvol>
+                <volumeref ref="Cell_10"/>
+                <position name="cellPos1" x="cellRadius*2 + between*2" y="cellRadius*4 + between*4" z="cellThickness"/>
+            </physvol>
+            
+            <physvol>
+                <volumeref ref="Cell_11"/>
+                <position name="cellPos1" x="cellRadius*2 + between*2" y="cellRadius*5 + between*5" z="cellThickness"/>
+            </physvol>
+            
+            <physvol>
+                <volumeref ref="Cell_12"/>
+                <position name="cellPos1" x="cellRadius*2 + between*2" y="cellRadius*6 + between*6" z="cellThickness"/>
+            </physvol>
+            
+            
+            
+            
+            
+            
+            
+            <physvol>
+                <volumeref ref="Cell_13"/>
+                <position name="cellPos1" x="cellRadius*3 + between*3" y="cellRadius*1 + between*1" z="cellThickness"/>
+            </physvol>
+            
+            <physvol>
+                <volumeref ref="Cell_14"/>
+                <position name="cellPos1" x="cellRadius*3 + between*3" y="cellRadius*2 + between*2" z="cellThickness"/>
+            </physvol>
+            
+            <physvol>
+                <volumeref ref="Cell_15"/>
+                <position name="cellPos1" x="cellRadius*3 + between*3" y="cellRadius*3 + between*3" z="cellThickness"/>
+            </physvol>
+            
+            <physvol>
+                <volumeref ref="Cell_16"/>
+                <position name="cellPos1" x="cellRadius*3 + between*3" y="cellRadius*4 + between*4" z="cellThickness"/>
+            </physvol>
+            
+            <physvol>
+                <volumeref ref="Cell_17"/>
+                <position name="cellPos1" x="cellRadius*3 + between*3" y="cellRadius*5 + between*5" z="cellThickness"/>
+            </physvol>
+            
+            <physvol>
+                <volumeref ref="Cell_18"/>
+                <position name="cellPos1" x="cellRadius*3 + between*3" y="cellRadius*6 + between*6" z="cellThickness"/>
+            </physvol>
+            
+
+            
+            
+            
+            
+            <physvol>
+                <volumeref ref="Cell_19"/>
+                <position name="cellPos1" x="cellRadius*4 + between*4" y="cellRadius*1 + between*1" z="cellThickness"/>
+            </physvol>
+            
+            <physvol>
+                <volumeref ref="Cell_20"/>
+                <position name="cellPos1" x="cellRadius*4 + between*4" y="cellRadius*2 + between*2" z="cellThickness"/>
+            </physvol>
+            
+            <physvol>
+                <volumeref ref="Cell_21"/>
+                <position name="cellPos1" x="cellRadius*4 + between*4" y="cellRadius*3 + between*3" z="cellThickness"/>
+            </physvol>
+            
+            <physvol>
+                <volumeref ref="Cell_22"/>
+                <position name="cellPos1" x="cellRadius*4 + between*4" y="cellRadius*4 + between*4" z="cellThickness"/>
+            </physvol>
+            
+            <physvol>
+                <volumeref ref="Cell_23"/>
+                <position name="cellPos1" x="cellRadius*4 + between*4" y="cellRadius*5 + between*5" z="cellThickness"/>
+            </physvol>
+            
+            <physvol>
+                <volumeref ref="Cell_24"/>
+                <position name="cellPos1" x="cellRadius*4 + between*4" y="cellRadius*6 + between*6" z="cellThickness"/>
+            </physvol>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <physvol>
+                <volumeref ref="Cell_25"/>
+                <position name="cellPos2" x="cellRadius*(z-1) + between*(z-1) " y="(1+1)*(cellRadius + between)" z="cellThickness"/>
+            </physvol>
+            
+            <physvol>
+                <volumeref ref="Cell_26"/>
+                <position name="cellPos2" x="cellRadius*(z-1) + between*(z-1) " y="(2+1)*(cellRadius + between)" z="cellThickness"/>
+            </physvol>
+            
+            
+            <physvol>
+                <volumeref ref="Cell_27"/>
+                <position name="cellPos2" x="cellRadius*(z-1) + between*(z-1) " y="(3+1)*(cellRadius + between)" z="cellThickness"/>
+            </physvol>
+            
+            <physvol>
+                <volumeref ref="Cell_28"/>
+                <position name="cellPos2" x="cellRadius*(z-1) + between*(z-1) " y="(4+1)*(cellRadius + between)" z="cellThickness"/>
+            </physvol>
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            <physvol>
+                <volumeref ref="Cell_29"/>
+                <position name="cellPos3" x="0 " y="(1+1)*(cellRadius + between)" z="cellThickness"/>
+            </physvol>
+            
+            <physvol>
+                <volumeref ref="Cell_30"/>
+                <position name="cellPos3" x="0 " y="(2+1)*(cellRadius + between)" z="cellThickness"/>
+            </physvol>
+            
+            <physvol>
+                <volumeref ref="Cell_31"/>
+                <position name="cellPos3" x="0 " y="(3+1)*(cellRadius + between)" z="cellThickness"/>
+            </physvol>
+            
+            <physvol>
+                <volumeref ref="Cell_32"/>
+                <position name="cellPos3" x="0 " y="(4+1)*(cellRadius + between)" z="cellThickness"/>
+            </physvol>
+            
+            <!--wrap -->
+            
+            
+            
+            <loop for="y" from="1" to="number_y" step="1">
+                <loop for="z" from="1" to="number_z" step="1">
+                    <physvol>
+                        <volumeref ref="Wrapp_teflon"/>
+                        <position name="cellPos1" x="cellRadius*y + between*y" y="cellRadius*z + between*z" z="cellThickness"/>
+                    </physvol>
+                </loop>
+            </loop>
+            
+            
+            <loop for="y" from="1" to="number_y" step="1">
+                <physvol>
+                    <volumeref ref="Wrapp_teflon"/>
+                    <position name="cellPos2" x="cellRadius*(z-1) + between*(z-1) " y="(y+1)*(cellRadius + between)" z="cellThickness"/>
+                </physvol>
+            </loop>
+            
+            <loop for="y" from="1" to="number_y" step="1">
+                <physvol>
+                    <volumeref ref="Wrapp_teflon"/>
+                    <position name="cellPos3" x="0 " y="(y+1)*(cellRadius + between)" z="cellThickness"/>
+                </physvol>
+            </loop>
+
+        </volume>
+        
+    </structure>
+    
+    <setup name="test" version="1.0">
+        <world ref="World"/>
+    </setup>
+    
+</gdml>
